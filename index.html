@@ -1,118 +1,99 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Login Page</title>
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-	<style>
-		body {
-			background-color: #121212;
-			color: #ffffff;
+    <title>CDT</title>
+    <meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+    <link rel="stylesheet" href="css/styles.css" type="text/css" media="screen,projection" />
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+        }
+        #sidebar {
+            background-color: #1e1e1e;
+            padding: 20px;
+            width: 200px;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+        #sidebar h1 {
+            color: #ffffff;
+        }
+        #nav {
+            list-style-type: none;
+            padding: 0;
+        }
+        #nav a {
+            display: block;
+            color: #c5c5c5;
+            text-decoration: none;
+            padding: 10px 0;
+        }
+        #nav a:hover {
+            color: #c5c5c5;
+        }
+		.dropdown {
+            position: relative;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #1e1e1e;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px #1e1e1e;
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: #000000;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-content a:hover {
+            background-color: #000000;
+            color: #000000;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
 		}
-		.card {
-			background-color: #1e1e1e;
-			border-color: #333;
-		}
-		.form-control {
-			background-color: #333;
-			color: #fff;
-			border-color: #444;
-		}
-		.form-control:focus {
-			background-color: #333;
-			color: #fff;
-			border-color: #555;
-			box-shadow: none;
-		}
-		.form-check-input:checked {
-			background-color: #444;
-			border-color: #fff;
-		}
-		.btn-primary {
-			background-color: #444444;
-			border-color: #fff;
-		}
-		.btn-primary:hover {
-			background-color: #6e6e6e;
-			border-color: #fff;
-		}
-		a {
-			color: #ffffff;
-		}
-		a:hover {
-			color: #ffffff;
-		}
-		.text-muted a {
-			color: #6c757d;
-		}
-		.text-muted a:hover {
-			color: #9a9a9a;
-		}
-	</style>
+        #content {
+            margin-left: 240px;
+            padding: 20px;
+        }
+        #content h2 {
+            color: #ffffff;
+        }
+        #content a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+        #content a:hover {
+            color: #c5c5c5;
+        }
+    </style>
 </head>
-
 <body>
-	<section class="h-100">
-		<div class="container h-100">
-			<div class="row justify-content-sm-center h-100">
-				<div class="col-xxl-4 col-xl-5 col-lg-5 col-md-7 col-sm-9">
-					<div class="text-center my-5">
-						<img src="Images/carm.png" alt="logo" width="100">
-					</div>
-					<div class="card shadow-lg">
-						<div class="card-body p-5">
-							<h1 class="fs-4 card-title fw-bold mb-4">Login</h1>
-							<form method="POST" class="needs-validation" novalidate="" autocomplete="off">
-								<div class="mb-3">
-									<label class="mb-2 text-muted" for="email">E-Mail Address</label>
-									<input id="email" type="email" class="form-control" name="email" value="" required autofocus>
-									<div class="invalid-feedback">
-										Email is invalid
-									</div>
-								</div>
 
-								<div class="mb-3">
-									<div class="mb-2 w-100">
-										<label class="text-muted" for="password">Password</label>
-										<a href="forgot.html" class="float-end">
-											Forgot Password?
-										</a>
-									</div>
-									<input id="password" type="password" class="form-control" name="password" required>
-									<div class="invalid-feedback">
-										Password is required
-									</div>
-								</div>
+    <div id="sidebar">
+        <h1>CDT</h1>
+        <ol id="nav">
+            <li><a href="#">Information</a></li>
+            <li class="dropdown">
+                <a href="#">Account</a>
+                <div class="dropdown-content">
+                    <a href="main.html">Sign In</a>
+                    <a href="#">Settings</a>
+                    <a href="#">Log Out</a>
+                </div>
+            </li>
+        </ol>
+    </div>
 
-								<div class="d-flex align-items-center">
-									<div class="form-check">
-										<input type="checkbox" name="remember" id="remember" class="form-check-input">
-										<label for="remember" class="form-check-label">Remember Me</label>
-									</div>
-									<button type="submit" class="btn btn-primary ms-auto">
-										Login
-									</button>
-								</div>
-							</form>
-						</div>
-						<div class="card-footer py-3 border-0">
-							<div class="text-center">
-								Don't have an account? <a href="register.html">Create One</a>
-							</div>
-						</div>
-					</div>
-					<div class="text-center mt-5 text-muted">
-						Copyright &copy; 2017-2021 &mdash; Shalaka Devices 
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl0D0b1lW8A7ZtWvZOHrf9dNQ4O7S6hkpXICKEF+d2zebG5eb6FQ7HEApl1" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-pzjw8f+ua7Kw1TIqj5b5m6bBpZ6FWRRgUmVfcrMCxE+ucQc2PhwwA1PgaqhsmgOG" crossorigin="anonymous"></script>
-	<script src="js/login.js"></script>
+    <div id="content">
+        <h2 class="first"><a href="#" id="intro">Information</a></h2>
+    </div>
 </body>
 </html>
